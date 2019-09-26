@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, redirect
+from flask_sqlalchemy import SQLAlchemy
 from model import *
 
 app =Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
 
 #//////////public////////////////
 
@@ -20,6 +23,7 @@ def layout():
 @app.route('/cusform', methods=['POST', 'GET'])
 def cusform():
     if request.method == 'POST':
+        print("Hello....")
         customer_name = request.form['name']
         customer_adhar = request.form['adhar']
         customer_dob = request.form['dob']
@@ -36,7 +40,8 @@ def cusform():
             db.session.add(new_customer)
             db.session.commit()
             return redirect('/scusview')
-        except:
+        except Exception as e:
+            print(e)
             return 'There was an issue adding your task'  
     else:
         return render_template('s_addcustomer.html')

@@ -1,10 +1,6 @@
-from run import app
-from flask_sqlalchemy import SQLAlchemy
+
 from datetime import datetime
-
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-db = SQLAlchemy(app)
+from run import db
 
 class Customer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
