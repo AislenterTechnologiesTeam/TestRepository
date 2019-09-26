@@ -1,0 +1,40 @@
+{% extends 's_layout.html' %}
+{% block content %}
+<div class="table-responsive" id="sailorTableArea">
+    <table id="sailorTable" class="table table-striped table-bordered" width="100%">
+ 
+        <thead>
+            <tr>
+                <th>CUSTOMER NAME</th>
+                <th>ADHAR ID</th>
+                <th>DOB</th>
+                <th>MOBILE</th>
+                <th>POLICY NAME</th>
+                <th>AMOUNT</th>
+                <th>PLOICY DATE</th>
+                <th>POLICY DURATION</th>
+                <th>AGENCY CODE</th>
+                <th>GENDER</th>
+                <th>ADDRESS</th>
+            </tr>
+        </thead>
+        <tbody>
+             {% for customer in customers %}
+             <tr>
+                 <td>{{ customer.name }}</td>
+                 <td>{{ customer.adhar }}</td>
+                 <td>{{ customer.dob }}</td>
+                 <td>{{ customer.mobile }}</td>
+                 <td>{{ customer.policyname }}</td>
+                 <td>{{ customer.amount }}</td>>
+                 <td>{{ customer.policydate }}</td>
+                 <td>{{ customer.policyduration }}</td>
+                 <td>{{ customer.agencycode }}</td>
+                 <td>{{ customer.gender }}</td>
+                 <td>{{ customer.address }}</td>           
+             </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

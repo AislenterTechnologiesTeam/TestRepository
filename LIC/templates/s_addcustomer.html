@@ -1,0 +1,112 @@
+{% extends "s_layout.html" %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.css" />
+	<style>
+		body{
+			background-color :#003679;
+		}
+	.bg-class{
+		background-color: rgb(151, 150, 150);
+		padding:10px;
+		border:1px dashed #000;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<div class="container">
+	
+		<form action="/cusform" method="POST">
+<div class="bg-class">
+          <h2 align="center" class="" style="color:white">CUSTOMER FORM</h2>
+
+			<div class="form-row">
+				<div class="col-md-8 offset-md-2 mb-3">
+					<label for="validationServer013">CUSTOMER NAME</label>
+					<input type="text" class="form-control" placeholder="Your Name here" value="" id="name" name="name" required>
+				</div>	
+            </div>
+            <div class="form-row">
+                    <div class="col-md-8 offset-md-2 mb-3">
+                        <label for="validationServer013">ADHAR NUMBER</label>
+                        <input type="number" class="form-control" placeholder="12 Digits" value="" id="adhar" name="adhar" required>
+                    </div>	
+                </div>
+
+			<div class="form-row">
+				<div class="col-md-4 offset-md-2 mb-3">
+					<label for="validationServer013">DATE OF BIRTH </label>
+					<input type="date" class="form-control" placeholder="Date Of Birth" value="" id="dob" required name="dob">
+                </div>
+                <div class="col-md-4 mb-3">
+                        <label for="validationServer023">MOBILE</label>
+                        <input type="number" class="form-control" placeholder="Mobile Number" value="" id="mobile" required name="mobile">
+                    </div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-4 offset-md-2 mb-3">
+					<label for="validationServer013">POLICY NAME</label>
+					<input type="text" class="form-control" placeholder="Name Of Policy" value="" id="policyname" required name="policyname">
+
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationServer023">AMOUNT</label>
+					<input type="number" class="form-control" placeholder="Amount" value="" id="amount" required name="amount">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col-md-4 offset-md-2 mb-3">
+					<label for="validationServer013">POLICY DATE</label>
+					<input type="date" class="form-control" placeholder="Name Of Policy" value="" id="policydate" required name="policydate">
+
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationServer023">POLICY DURATION</label>
+					<input type="date" class="form-control" placeholder="Amount" value="" id="policyduration" required name="policyduration"> 
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col-md-4 offset-md-2 mb-3">
+					<label for="validationServer013">AGENCY CODE</label>
+					<input type="number" class="form-control" placeholder="code" value="" id="agencycode" required name="agencycode">
+
+				</div>
+											
+			</div>
+			<div class="form-row">
+				<div class="col-md-4 mb-3 offset-md-2 form-check-inline">
+			        <label for="form-check-label">GENDER:</label><br>  
+                    <input type="radio" name="gender" value="male"> Male <br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                    <input type="radio" name="gender" value="other"> Other<br>  
+                </div>
+			</div>
+			
+			<div class="form-row">
+				<div class="col-md-8 offset-md-2 mb-3">
+					<label for="validationServer013">ADDRESS </label>
+					
+					<textarea  class="form-control is-valid" id="address" cols="30" rows="2" name="address" required></textarea>
+
+				</div>
+			</div>
+			<input type="submit" value="submit" >
+			<!-- <button class="btn btn-lg btn-primary offset-md-5" type="submit" value="addcustomer">Submit form</button> -->
+		</div></form>
+	
+	</div>
+</body>
+    
+</html>
+{% endblock %}
