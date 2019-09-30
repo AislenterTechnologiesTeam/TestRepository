@@ -6,7 +6,7 @@ class Customer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     adhar = db.Column(db.Integer)
-    dob = db.Column(db.Integer)
+    dob = db.Column(db.DateTime, default=datetime.utcnow)
     mobile = db.Column(db.Integer)
     policy_name = db.Column(db.String(50))
     amount = db.Column(db.Integer)
@@ -15,6 +15,9 @@ class Customer(db.Model):
     agencycode = db.Column(db.Integer,)
     gender = db.Column(db.String(20))
     address = db.Column(db.VARCHAR)
+
+    def __repr__(self):
+        return '<User %r>' % self.name
 
    
 class Agent(db.Model):

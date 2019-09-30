@@ -26,12 +26,12 @@ def cusform():
         print("Hello....")
         customer_name = request.form['name']
         customer_adhar = request.form['adhar']
-        customer_dob = request.form['dob']
+        customer_dob = stringtodate(request.form['dob'])
         customer_mobile = request.form['mobile']
         customer_policyname = request.form['policyname']
         customer_amount = request.form['amount']
-        customer_policydate = request.form['policydate']
-        customer_policyduration = request.form['policyduration']
+        customer_policydate = stringtodate(request.form['policydate'])
+        customer_policyduration = stringtodate(request.form['policyduration'])
         customer_agencycode = request.form['agencycode']
         customer_gender = request.form['gender']
         customer_address = request.form['address']
@@ -90,7 +90,7 @@ def spolicyview():
 @app.route('/scusview')
 def scusview():
     customers = Customer.query.all()
-    return render_template("s_cusview.html", customer=customers)
+    return render_template("s_cusview.html", customers=customers)
 
 #//////////////////////agent////////////////////
 
@@ -145,6 +145,8 @@ def agentview():
     return render_template("admin_agentview.html")  
 
 
+def stringtodate(strdate):
+    return datetime.strptime(strdate, '%Y-%m-%d')
 
 if __name__ == '__main__':
     app.run(debug=True)    
